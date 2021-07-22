@@ -1,5 +1,6 @@
-//import java.util.*;
+//package P0;//
 
+import java.util.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -20,17 +21,12 @@ class Budgetar{
         System.out.println(" Please populate the Items List");
         String ItemX;
         do {
-            //ItemX = item.next();
-            //Double cogX = item.nextDouble();       //Cost of Goods
             
             cogs.put(item.next(), item.nextDouble());
             //cogs.put(ItemX, cogX);                //Update Cost of Goods Hashmap, Key items
             System.out.println(cogs);
             x++;
-            /* if (ItemX.isBlank() || ItemX.isEmpty() || ItemX.toLowerCase().contains("Exit")) {    //will detect an Empty 0r Zero values,
-                x = 0;
-            } */
-        } while (!(item.next().isBlank() || item.next().isEmpty()) || (x<=5) || ItemX.contains("Exit"));
+        } while (!(item.equals(null)  ));   //|| item.next().isEmpty()) || (x<=5) || ItemX.contains("Exit"));
         System.out.println(cogs);
     }
 
