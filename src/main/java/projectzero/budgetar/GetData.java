@@ -32,7 +32,7 @@ public class GetData {
     public GetData  GetBudget() {   //get the Total Budget Size
         System.out.println(" Enter Total funds Available: $");
         this.tfa = entry.nextDouble();
-        //System.out.println(" TFA Wallet Updated: $" + this.tfa);
+        System.out.println(" TFA Wallet Updated:... $" + this.tfa );
         return this;
     }
 
@@ -163,17 +163,18 @@ public class GetData {
         return this;
     }
 
-
+    //calculate trx Balance.
     public void calcBalance(){
         String line;
         try {
             itemList = getFileContent().itemList;
+            sumCost=0;
             sumCost = itemList.stream().mapToDouble(s -> Double.parseDouble(s.split(",")[1])).sum();
         }catch (Exception e){
             e.printStackTrace();
         }
         System.out.println("Total Est Cost: $" + sumCost);
-        System.out.println("Account Balance after Purchases: $" + (cashBalance = this.tfa - sumCost));
+        System.out.println("Account Balance: $" + (cashBalance = this.tfa - sumCost));
     }
 
     public void streamHttp(){
